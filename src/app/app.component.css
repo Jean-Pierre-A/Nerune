@@ -140,6 +140,26 @@ section {
   transform: translateY(-2px);
 }
 
+.btn-instagram {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-icon {
+  width: 18px;
+  height: 18px;
+}
+
 .btn-icon-only {
   padding: 0.75rem;
   border-radius: 50%;

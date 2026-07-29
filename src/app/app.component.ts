@@ -14,6 +14,7 @@ interface Perfume {
   longevity: string;
   description: string;
   gradient: string; /* CSS gradient representing the scent */
+  image: string;    /* Path to original perfume bottle photo */
 }
 
 @Component({
@@ -42,12 +43,13 @@ export class AppComponent {
       gender: 'Unisex',
       family: 'Oriental',
       notes: ['Azafrán', 'Jazmín de Egipto', 'Madera de Ámbar', 'Resina de Abeto', 'Cedro'],
-      price: 85000,
+      price: 65000,
       size: '60 ml',
       rating: 4.9,
       longevity: '12+ horas',
       description: 'Una fragancia poética, densa y sumamente sofisticada. Deja una estela ámbar-floral inolvidable y magnética.',
-      gradient: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 50%, #7f1d1d 100%)'
+      gradient: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 50%, #7f1d1d 100%)',
+      image: 'perfumes/rouge540.png'
     },
     {
       id: '2',
@@ -56,12 +58,13 @@ export class AppComponent {
       gender: 'Masculino',
       family: 'Amaderado',
       notes: ['Bergamota de Calabria', 'Pimienta de Sichuan', 'Lavanda', 'Vetiver', 'Pachulí', 'Ambroxan'],
-      price: 79000,
+      price: 55000,
       size: '60 ml',
       rating: 4.8,
       longevity: '8 - 10 horas',
       description: 'Frescura cruda e indómita combinada con maderas nobles. Un perfume masculino clásico, audaz y profundamente sensual.',
-      gradient: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 70%, #020617 100%)'
+      gradient: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 70%, #020617 100%)',
+      image: 'perfumes/sauvage.png'
     },
     {
       id: '3',
@@ -70,12 +73,13 @@ export class AppComponent {
       gender: 'Femenino',
       family: 'Floral',
       notes: ['Lavanda de Francia', 'Mandarina', 'Flor de Azahar de Marruecos', 'Jazmín', 'Vainilla de Madagascar', 'Almizcle'],
-      price: 79000,
+      price: 50000,
       size: '60 ml',
       rating: 4.8,
       longevity: '9 - 11 horas',
       description: 'La tensión perfecta entre la masculinidad de la lavanda y la feminidad ardiente del azahar. Un grito de libertad e independencia.',
-      gradient: 'linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%)'
+      gradient: 'linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%)',
+      image: 'perfumes/libre.png'
     },
     {
       id: '4',
@@ -84,12 +88,13 @@ export class AppComponent {
       gender: 'Masculino',
       family: 'Cítrico',
       notes: ['Piña', 'Mandarina', 'Grosellas Negras', 'Manzana', 'Abedul', 'Musgo de Roble', 'Vainilla'],
-      price: 89000,
+      price: 60000,
       size: '60 ml',
       rating: 4.9,
       longevity: '10 - 12 horas',
       description: 'Una oda a la fuerza, el éxito y el legado. Abre con cítricos y piña jugosa, madurando en maderas ahumadas extremadamente sofisticadas.',
-      gradient: 'linear-gradient(135deg, #64748b 0%, #334155 60%, #0f172a 100%)'
+      gradient: 'linear-gradient(135deg, #64748b 0%, #334155 60%, #0f172a 100%)',
+      image: 'perfumes/aventis.png'
     },
     {
       id: '5',
@@ -98,12 +103,13 @@ export class AppComponent {
       gender: 'Femenino',
       family: 'Dulce',
       notes: ['Café Negro', 'Pera', 'Flor de Azahar', 'Jazmín', 'Vainilla', 'Pachulí', 'Cedro'],
-      price: 79000,
+      price: 48000,
       size: '60 ml',
       rating: 4.7,
       longevity: '8 - 10 horas',
       description: 'Sensual, rebelde y adictiva. La energía electrizante del café combinada con la dulzura aterciopelada de la vainilla y flores blancas.',
-      gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 60%, #030712 100%)'
+      gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 60%, #030712 100%)',
+      image: 'perfumes/black_opium.png'
     },
     {
       id: '6',
@@ -112,12 +118,13 @@ export class AppComponent {
       gender: 'Masculino',
       family: 'Cítrico',
       notes: ['Toronja (Pomelo)', 'Limón', 'Menta', 'Pimienta Rosa', 'Jengibre', 'Incienso', 'Sándalo'],
-      price: 79000,
+      price: 45000,
       size: '60 ml',
       rating: 4.8,
       longevity: '8 - 10 horas',
       description: 'Un perfume aromático y boscoso de elegancia atemporal. Destaca por su frescura cítrica inicial y un fondo cálido e hipnótico de incienso.',
-      gradient: 'linear-gradient(135deg, #0e7490 0%, #155e75 50%, #083344 100%)'
+      gradient: 'linear-gradient(135deg, #0e7490 0%, #155e75 50%, #083344 100%)',
+      image: 'perfumes/bleu.png'
     }
   ];
 

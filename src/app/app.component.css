@@ -529,6 +529,20 @@ section {
   animation: orb-spin 15s infinite linear;
 }
 
+.rec-perfume-img {
+  position: relative;
+  max-height: 80%;
+  max-width: 80%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 12px 25px rgba(0,0,0,0.7));
+  transition: transform 0.4s ease;
+}
+
+.scent-orb-container:hover .rec-perfume-img {
+  transform: scale(1.08) translateY(-4px);
+}
+
 @keyframes orb-spin {
   0% { transform: rotate(0deg) scale(0.95); }
   50% { transform: rotate(180deg) scale(1.05); }
@@ -544,6 +558,7 @@ section {
   border: 2px solid rgba(255,255,255,0.2);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.1);
   backdrop-filter: blur(5px);
+  pointer-events: none;
 }
 
 .rec-badge {
@@ -719,62 +734,106 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .card-visual {
-  height: 180px;
+  height: 250px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.2);
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.4) 0%, rgba(5, 8, 20, 0.85) 100%);
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem;
 }
 
 .scent-preview {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  filter: blur(25px);
-  opacity: 0.7;
+  filter: blur(35px);
+  opacity: 0.55;
+  z-index: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.card-visual::after {
-  content: '';
+.card-perfume-img {
+  position: relative;
+  max-height: 82%;
+  max-width: 82%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.65));
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+}
+
+.perfume-card:hover .card-perfume-img {
+  transform: scale(1.08) translateY(-6px);
+  filter: drop-shadow(0 18px 30px rgba(139, 92, 246, 0.45));
+}
+
+.perfume-card:hover .scent-preview {
+  opacity: 0.85;
+  transform: scale(1.2);
+}
+
+.visual-glass-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 70%);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.25) 100%);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .gender-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-primary);
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.25rem 0.65rem;
   border-radius: 100px;
   text-transform: uppercase;
+  z-index: 4;
 }
 
 .rating-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--accent-gold);
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.25rem 0.65rem;
   border-radius: 100px;
+  z-index: 4;
+}
+
+.inspiration-tag-badge {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 1rem;
+  background: rgba(139, 92, 246, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #e9d5ff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 4;
 }
 
 .card-body {

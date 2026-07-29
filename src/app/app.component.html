@@ -194,6 +194,7 @@
           <div class="recommendation-visual">
             <div class="scent-orb-container">
               <div class="scent-orb" [style.background]="recommendedPerfume.gradient"></div>
+              <img [src]="recommendedPerfume.image" [alt]="recommendedPerfume.name" class="rec-perfume-img" />
               <div class="orb-glass-shield"></div>
             </div>
             <span class="rec-badge">Tu Combinación Perfecta</span>
@@ -283,8 +284,11 @@
           <!-- Glass Card Visual Scent Representation -->
           <div class="card-visual">
             <div class="scent-preview" [style.background]="perfume.gradient"></div>
+            <img [src]="perfume.image" [alt]="perfume.name + ' - Original'" class="card-perfume-img" loading="lazy" />
+            <div class="visual-glass-overlay"></div>
             <span class="gender-badge">{{ perfume.gender }}</span>
             <span class="rating-badge">⭐ {{ perfume.rating }}</span>
+            <span class="inspiration-tag-badge">Aroma Original</span>
           </div>
 
           <div class="card-body">

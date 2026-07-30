@@ -1,14 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect width="100" height="100" fill="#050810"/>
-  <!-- Bottle cap -->
-  <rect x="42" y="8" width="16" height="8" rx="2" fill="none" stroke="#8899bb" stroke-width="1.5"/>
-  <!-- Bottle neck connector -->
-  <line x1="50" y1="16" x2="50" y2="26" stroke="#8899bb" stroke-width="1.5"/>
-  <!-- Bottle body (house/pentagon shape) -->
-  <path d="M30,38 L50,26 L70,38 L70,72 L30,72 Z" fill="#0d1929"/>
-  <path d="M30,38 L50,26 L70,38 L70,72 L30,72 Z" fill="none" stroke="#8899bb" stroke-width="1.5"/>
-  <!-- Liquid fill area -->
-  <path d="M30,60 L30,72 L70,72 L70,60 Z" fill="#1a2e4a"/>
-  <!-- Liquid fill line -->
-  <line x1="30" y1="60" x2="70" y2="60" stroke="#2a4a7a" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Fondo oscuro -->
+  <rect width="32" height="32" rx="6" fill="#06080f"/>
+
+  <!-- Tapa del perfume -->
+  <rect x="13" y="2" width="6" height="3" rx="1" fill="none" stroke="#a0b4d0" stroke-width="1"/>
+
+  <!-- Conector cuello -->
+  <rect x="15" y="5" width="2" height="3" fill="#a0b4d0"/>
+
+  <!-- Cuerpo: forma de botella (casa/pentágono) -->
+  <path d="M10,14 L16,8 L22,14 L22,26 L10,26 Z" fill="#0e1e36" stroke="#a0b4d0" stroke-width="1" stroke-linejoin="round"/>
+
+  <!-- Líquido interior (parte inferior) -->
+  <path d="M10,21 L10,26 L22,26 L22,21 Z" fill="#1c3557" opacity="0.9"/>
+
+  <!-- Línea del nivel de líquido -->
+  <line x1="10" y1="21" x2="22" y2="21" stroke="#2d5080" stroke-width="1"/>
+
+  <!-- Brillo en la botella -->
+  <line x1="12.5" y1="11" x2="12.5" y2="19" stroke="#ffffff" stroke-width="0.6" opacity="0.2" stroke-linecap="round"/>
 </svg>

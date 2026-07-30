@@ -25,7 +25,7 @@ interface Perfume {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Auren Perfumes';
+  title = 'Nerune Perfumes';
   
   // WhatsApp Number Configuration
   private readonly whatsappPhone = '573114113938';
@@ -38,7 +38,7 @@ export class AppComponent {
   perfumes: Perfume[] = [
     {
       id: '1',
-      name: 'Auren Rouge 540',
+      name: 'Nerune Rouge 540',
       inspiration: 'Baccarat Rouge 540 (Maison Francis Kurkdjian)',
       gender: 'Unisex',
       family: 'Oriental',
@@ -53,7 +53,7 @@ export class AppComponent {
     },
     {
       id: '2',
-      name: 'Auren Sauvage',
+      name: 'Nerune Sauvage',
       inspiration: 'Sauvage (Dior)',
       gender: 'Masculino',
       family: 'Amaderado',
@@ -68,7 +68,7 @@ export class AppComponent {
     },
     {
       id: '3',
-      name: 'Auren Libre',
+      name: 'Nerune Libre',
       inspiration: 'Libre (Yves Saint Laurent)',
       gender: 'Femenino',
       family: 'Floral',
@@ -83,7 +83,7 @@ export class AppComponent {
     },
     {
       id: '4',
-      name: 'Auren Aventis',
+      name: 'Nerune Aventis',
       inspiration: 'Aventus (Creed)',
       gender: 'Masculino',
       family: 'Cítrico',
@@ -98,7 +98,7 @@ export class AppComponent {
     },
     {
       id: '5',
-      name: 'Auren Black Opium',
+      name: 'Nerune Black Opium',
       inspiration: 'Black Opium (Yves Saint Laurent)',
       gender: 'Femenino',
       family: 'Dulce',
@@ -113,7 +113,7 @@ export class AppComponent {
     },
     {
       id: '6',
-      name: 'Auren Bleu',
+      name: 'Nerune Bleu',
       inspiration: 'Bleu de Chanel (Chanel)',
       gender: 'Masculino',
       family: 'Cítrico',
@@ -194,13 +194,13 @@ export class AppComponent {
     // Seductor -> Black Opium, Rouge 540, Sauvage
     let filtered = candidates;
     if (personality === 'Elegante') {
-      filtered = candidates.filter(p => ['Auren Aventis', 'Auren Bleu', 'Auren Libre', 'Auren Rouge 540'].includes(p.name));
+      filtered = candidates.filter(p => ['Nerune Aventis', 'Nerune Bleu', 'Nerune Libre', 'Nerune Rouge 540'].includes(p.name));
     } else if (personality === 'Audaz') {
-      filtered = candidates.filter(p => ['Auren Sauvage', 'Auren Aventis', 'Auren Rouge 540'].includes(p.name));
+      filtered = candidates.filter(p => ['Nerune Sauvage', 'Nerune Aventis', 'Nerune Rouge 540'].includes(p.name));
     } else if (personality === 'Fresco') {
-      filtered = candidates.filter(p => ['Auren Bleu', 'Auren Sauvage', 'Auren Libre'].includes(p.name));
+      filtered = candidates.filter(p => ['Nerune Bleu', 'Nerune Sauvage', 'Nerune Libre'].includes(p.name));
     } else if (personality === 'Seductor') {
-      filtered = candidates.filter(p => ['Auren Black Opium', 'Auren Rouge 540', 'Auren Sauvage'].includes(p.name));
+      filtered = candidates.filter(p => ['Nerune Black Opium', 'Nerune Rouge 540', 'Nerune Sauvage'].includes(p.name));
     }
 
     if (filtered.length === 0) {
@@ -231,11 +231,11 @@ export class AppComponent {
     let message = '';
 
     if (type === 'perfume' && perfume) {
-      message = `Hola Auren! Me interesa el perfume *${perfume.name}* (Inspirado en *${perfume.inspiration}* de ${perfume.size}). ¿Me podrían dar información de cómo realizar mi pedido?`;
+      message = `Hola Nerune! Me interesa el perfume *${perfume.name}* (Inspirado en *${perfume.inspiration}* de ${perfume.size}). ¿Me podrían dar información de cómo realizar mi pedido?`;
     } else if (type === 'recommendation' && perfume) {
-      message = `Hola Auren! Realicé el test en su sitio web y obtuve la recomendación de *${perfume.name}* (Inspirado en *${perfume.inspiration}*). Me gustaría comprar este aroma.`;
+      message = `Hola Nerune! Realicé el test en su sitio web y obtuve la recomendación de *${perfume.name}* (Inspirado en *${perfume.inspiration}*). Me gustaría comprar este aroma.`;
     } else {
-      message = `Hola Auren! Me gustaría recibir asesoría sobre su catálogo de perfumes de inspiración.`;
+      message = `Hola Nerune! Me gustaría recibir asesoría sobre su catálogo de perfumes de inspiración.`;
     }
 
     const encodedText = encodeURIComponent(message);

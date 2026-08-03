@@ -18,7 +18,6 @@
       <a href="#quiz-section">Descubridor</a>
       <a href="#catalog">Colección</a>
       <a href="#benefits">Calidad</a>
-      <a href="#testimonials">Testimonios</a>
     </nav>
     
     <div class="cta-area">
@@ -117,14 +116,14 @@
           <div class="step-indicator">Paso 1 de 3</div>
           <h3 class="step-title">¿A quién va dirigida la fragancia?</h3>
           <div class="quiz-options-grid">
-            <button class="quiz-option-card glass-panel-interactive" (click)="selectGender('Femenino')">
+            <button class="quiz-option-card glass-panel-interactive" (click)="selectGender('Mujer')">
               <span class="option-emoji">✨</span>
-              <span class="option-text">Femenino</span>
+              <span class="option-text">Mujer</span>
               <span class="option-desc">Aromas florales, dulces y delicados.</span>
             </button>
-            <button class="quiz-option-card glass-panel-interactive" (click)="selectGender('Masculino')">
+            <button class="quiz-option-card glass-panel-interactive" (click)="selectGender('Hombre')">
               <span class="option-emoji">🪵</span>
-              <span class="option-text">Masculino</span>
+              <span class="option-text">Hombre</span>
               <span class="option-desc">Frescos, amaderados e intensos.</span>
             </button>
             <button class="quiz-option-card glass-panel-interactive" (click)="selectGender('Unisex')">
@@ -261,8 +260,8 @@
         <span class="filter-label">Género:</span>
         <div class="filter-buttons">
           <button [class.active]="selectedGenderFilter === 'Todos'" (click)="filterByGender('Todos')">Todos</button>
-          <button [class.active]="selectedGenderFilter === 'Femenino'" (click)="filterByGender('Femenino')">Femenino</button>
-          <button [class.active]="selectedGenderFilter === 'Masculino'" (click)="filterByGender('Masculino')">Masculino</button>
+          <button [class.active]="selectedGenderFilter === 'Mujer'" (click)="filterByGender('Mujer')">Mujer</button>
+          <button [class.active]="selectedGenderFilter === 'Hombre'" (click)="filterByGender('Hombre')">Hombre</button>
           <button [class.active]="selectedGenderFilter === 'Unisex'" (click)="filterByGender('Unisex')">Unisex</button>
         </div>
       </div>
@@ -303,7 +302,7 @@
 
             <div class="card-notes">
               @for (note of perfume.notes.slice(0, 3); track note) {
-                <span class="card-note-pill">{{ note }}</span>
+                <span class="card-note-pill">{{ getNoteIcon(note) }} {{ note }}</span>
               }
               @if (perfume.notes.length > 3) {
                 <span class="card-note-pill text-muted">+{{ perfume.notes.length - 3 }}</span>
@@ -343,66 +342,28 @@
   <!-- Quality / Benefits Section -->
   <section id="benefits" class="benefits-section">
     <div class="section-header">
-      <span class="section-subtitle">Nuestra Diferencia</span>
-      <h2>¿Por qué elegir Nerune?</h2>
-      <p>Nos obsesiona la calidad olfativa y la fijación de nuestras fragancias para ofrecerte una experiencia de lujo verdadero.</p>
+      <span class="section-subtitle">Perfumes Originales</span>
+      <h2>Autenticidad y calidad garantizadas</h2>
+      <p>Todos nuestros perfumes son originales y cuidadosamente seleccionados para ofrecerte el aroma real de cada marca. Compramos directamente las fragancias auténticas, así que disfrutas un producto 100% genuino con garantía de calidad.</p>
     </div>
 
     <div class="benefits-grid">
       <div class="benefit-card glass-panel-interactive">
-        <div class="benefit-icon">🧪</div>
-        <h3>Aceites Importados</h3>
-        <p>Utilizamos esencias importadas de Francia de grado de perfumería fina, garantizando notas idénticas a las originales.</p>
+        <div class="benefit-icon">✅</div>
+        <h3>Autenticidad garantizada</h3>
+        <p>Trabajamos solo con perfumes originales, sin imitaciones. Cada frasco se entrega con la calidad y el aroma auténtico de la marca.</p>
       </div>
 
       <div class="benefit-card glass-panel-interactive">
-        <div class="benefit-icon">⏱</div>
-        <h3>Fijación Extrema</h3>
-        <p>Nuestra fórmula cuenta con una concentración del 30% (Extrait de Parfum), permitiendo una duración en piel de más de 8 horas.</p>
+        <div class="benefit-icon">🔒</div>
+        <h3>Control de calidad</h3>
+        <p>Revisamos cada producto antes del envío para asegurar que llegue en perfectas condiciones y con su presentación original intacta.</p>
       </div>
 
       <div class="benefit-card glass-panel-interactive">
-        <div class="benefit-icon">💎</div>
-        <h3>Elegancia Accesible</h3>
-        <p>Obtén el prestigio y estela de un perfume de diseñador de $800,000 COP, por una fracción muy conveniente de su valor.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials-section">
-    <div class="section-header">
-      <span class="section-subtitle">Clientes Felices</span>
-      <h2>Experiencias Nerune</h2>
-      <p>Lo que dicen quienes ya se atrevieron a cambiar las marcas tradicionales por nuestras inspiraciones de lujo.</p>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card glass-panel">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p>"El Nerune Rouge 540 es una locura. Me lo aplico en la mañana y en la noche todavía me preguntan qué perfume llevo puesto. La similitud es del 98%, increíble."</p>
-        <div class="client-info">
-          <span class="client-name">Valeria Gómez</span>
-          <span class="client-tag">Cliente Verificada</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card glass-panel">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p>"Soy coleccionista de perfumes y pedí el Aventis para diario. Debo decir que superó mis expectativas. La nota de piña es riquísima y proyecta muy bien."</p>
-        <div class="client-info">
-          <span class="client-name">Juan Camilo R.</span>
-          <span class="client-tag">Cliente Verificado</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card glass-panel">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p>"Compré el Black Opium y es exactamente igual de dulce y misterioso. La atención por WhatsApp fue súper rápida y el envío llegó en 2 días a Bogotá."</p>
-        <div class="client-info">
-          <span class="client-name">Carolina Ospina</span>
-          <span class="client-tag">Cliente Verificada</span>
-        </div>
+        <div class="benefit-icon">🌟</div>
+        <h3>Aroma fiel y duradero</h3>
+        <p>Nuestras fragancias conservan la proyección, notas y permanencia tal como están pensadas por el diseñador original.</p>
       </div>
     </div>
   </section>

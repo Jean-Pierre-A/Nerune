@@ -5,7 +5,7 @@ interface Perfume {
   id: string;
   name: string;
   inspiration: string;
-  gender: 'Femenino' | 'Masculino' | 'Unisex';
+  gender: 'Mujer' | 'Hombre' | 'Unisex';
   family: 'Floral' | 'Amaderado' | 'Cítrico' | 'Dulce' | 'Oriental';
   notes: string[];
   price: number;
@@ -14,7 +14,7 @@ interface Perfume {
   longevity: string;
   description: string;
   gradient: string; /* CSS gradient representing the scent */
-  image: string;    /* Path to original perfume bottle photo */
+  image: string;    /* Path to perfume bottle photo */
 }
 
 @Component({
@@ -34,97 +34,157 @@ export class AppComponent {
   selectedGenderFilter: string = 'Todos';
   selectedFamilyFilter: string = 'Todos';
 
+  getNoteIcon(note: string): string {
+    const normalized = note.toLowerCase();
+
+    if (normalized.includes('bergamota') || normalized.includes('mandarina') || normalized.includes('naranja') || normalized.includes('lima') || normalized.includes('cítrico')) {
+      return '🍊';
+    }
+
+    if (normalized.includes('pimienta') || normalized.includes('canela') || normalized.includes('mentol') || normalized.includes('pepino')) {
+      return '🌿';
+    }
+
+    if (normalized.includes('madera') || normalized.includes('cedro') || normalized.includes('vetiver') || normalized.includes('sándalo')) {
+      return '🌲';
+    }
+
+    if (normalized.includes('vainilla') || normalized.includes('caramelo') || normalized.includes('café') || normalized.includes('ámbar')) {
+      return '🍮';
+    }
+
+    if (normalized.includes('jazmín') || normalized.includes('rosa') || normalized.includes('floral')) {
+      return '🌸';
+    }
+
+    if (normalized.includes('incienso') || normalized.includes('musk')) {
+      return '🕯️';
+    }
+
+    return '✨';
+  }
+
   // Perfume Catalogue Data
   perfumes: Perfume[] = [
     {
       id: '1',
-      name: 'Nerune Rouge 540',
-      inspiration: 'Baccarat Rouge 540 (Maison Francis Kurkdjian)',
-      gender: 'Unisex',
-      family: 'Oriental',
-      notes: ['Azafrán', 'Jazmín de Egipto', 'Madera de Ámbar', 'Resina de Abeto', 'Cedro'],
-      price: 65000,
-      size: '60 ml',
-      rating: 4.9,
-      longevity: '12+ horas',
-      description: 'Una fragancia poética, densa y sumamente sofisticada. Deja una estela ámbar-floral inolvidable y magnética.',
-      gradient: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 50%, #7f1d1d 100%)',
-      image: 'perfumes/rouge540.png'
+      name: 'Nautica Voyage',
+      inspiration: 'Fragancia fresca de estilo marinero',
+      gender: 'Hombre',
+      family: 'Cítrico',
+      notes: ['Bergamota', 'Pimienta', 'Madera', 'Ámbar'],
+      price: 130000,
+      size: '100 ml',
+      rating: 4.7,
+      longevity: '6 - 8 horas',
+      description: 'Una propuesta fresca, limpia y muy versátil para el día, con un toque especiado que le da carácter.',
+      gradient: 'linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 60%, #0f172a 100%)',
+      image: 'perfumes/Nautica.webp'
     },
     {
       id: '2',
-      name: 'Nerune Sauvage',
-      inspiration: 'Sauvage (Dior)',
-      gender: 'Masculino',
+      name: 'Nitro Red',
+      inspiration: 'Aroma intenso y enérgico',
+      gender: 'Hombre',
       family: 'Amaderado',
-      notes: ['Bergamota de Calabria', 'Pimienta de Sichuan', 'Lavanda', 'Vetiver', 'Pachulí', 'Ambroxan'],
-      price: 55000,
-      size: '60 ml',
+      notes: ['Pimienta', 'Cedro', 'Vetiver', 'Cítrico'],
+      price: 170000,
+      size: '100 ml',
       rating: 4.8,
       longevity: '8 - 10 horas',
-      description: 'Frescura cruda e indómita combinada con maderas nobles. Un perfume masculino clásico, audaz y profundamente sensual.',
-      gradient: 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 70%, #020617 100%)',
-      image: 'perfumes/sauvage.png'
+      description: 'Un perfume audaz que combina madera noble y un punto de frescura para una presencia marcada.',
+      gradient: 'linear-gradient(135deg, #f97316 0%, #dc2626 55%, #7f1d1d 100%)',
+      image: 'perfumes/nitro-red.webp'
     },
     {
       id: '3',
-      name: 'Nerune Libre',
-      inspiration: 'Libre (Yves Saint Laurent)',
-      gender: 'Femenino',
-      family: 'Floral',
-      notes: ['Lavanda de Francia', 'Mandarina', 'Flor de Azahar de Marruecos', 'Jazmín', 'Vainilla de Madagascar', 'Almizcle'],
-      price: 50000,
-      size: '60 ml',
-      rating: 4.8,
-      longevity: '9 - 11 horas',
-      description: 'La tensión perfecta entre la masculinidad de la lavanda y la feminidad ardiente del azahar. Un grito de libertad e independencia.',
-      gradient: 'linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%)',
-      image: 'perfumes/libre.png'
+      name: 'Yum Yum',
+      inspiration: 'Fragancia dulce y seductora',
+      gender: 'Mujer',
+      family: 'Dulce',
+      notes: ['Vainilla', 'Jazmín', 'Caramelo', 'Café'],
+      price: 195000,
+      size: '100 ml',
+      rating: 4.9,
+      longevity: '8 - 10 horas',
+      description: 'Una fragancia envolvente, muy femenina y con un acabado dulce que cautiva desde el primer instante.',
+      gradient: 'linear-gradient(135deg, #f472b6 0%, #ec4899 50%, #be185d 100%)',
+      image: 'perfumes/armaf-yum-yum-1.webp'
     },
     {
       id: '4',
-      name: 'Nerune Aventis',
-      inspiration: 'Aventus (Creed)',
-      gender: 'Masculino',
+      name: 'Mandarin Sky',
+      inspiration: 'Aroma luminoso y efervescente',
+      gender: 'Hombre',
       family: 'Cítrico',
-      notes: ['Piña', 'Mandarina', 'Grosellas Negras', 'Manzana', 'Abedul', 'Musgo de Roble', 'Vainilla'],
-      price: 60000,
-      size: '60 ml',
-      rating: 4.9,
-      longevity: '10 - 12 horas',
-      description: 'Una oda a la fuerza, el éxito y el legado. Abre con cítricos y piña jugosa, madurando en maderas ahumadas extremadamente sofisticadas.',
-      gradient: 'linear-gradient(135deg, #64748b 0%, #334155 60%, #0f172a 100%)',
-      image: 'perfumes/aventis.png'
+      notes: ['Mandarina', 'Naranja', 'Lima', 'Rosa'],
+      price: 160000,
+      size: '100 ml',
+      rating: 4.7,
+      longevity: '6 - 8 horas',
+      description: 'Brillante y alegre, ideal para quienes buscan un aroma fresco con un aire sofisticado y juvenil.',
+      gradient: 'linear-gradient(135deg, #fde68a 0%, #fb923c 50%, #d97706 100%)',
+      image: 'perfumes/odyssey_mandarin_skyl.webp'
     },
     {
       id: '5',
-      name: 'Nerune Black Opium',
-      inspiration: 'Black Opium (Yves Saint Laurent)',
-      gender: 'Femenino',
-      family: 'Dulce',
-      notes: ['Café Negro', 'Pera', 'Flor de Azahar', 'Jazmín', 'Vainilla', 'Pachulí', 'Cedro'],
-      price: 48000,
-      size: '60 ml',
-      rating: 4.7,
-      longevity: '8 - 10 horas',
-      description: 'Sensual, rebelde y adictiva. La energía electrizante del café combinada con la dulzura aterciopelada de la vainilla y flores blancas.',
-      gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 60%, #030712 100%)',
-      image: 'perfumes/black_opium.png'
+      name: 'Vulcan Feu',
+      inspiration: 'Intensidad y calidez oriental',
+      gender: 'Mujer',
+      family: 'Oriental',
+      notes: ['Canela', 'Incienso', 'Ámbar', 'Madera'],
+      price: 220000,
+      size: '100 ml',
+      rating: 4.9,
+      longevity: '10 - 12 horas',
+      description: 'Una fragancia potente, intensa y muy elegante, pensada para quienes quieren dejar una huella.',
+      gradient: 'linear-gradient(135deg, #fb7185 0%, #b91c1c 50%, #450a0a 100%)',
+      image: 'perfumes/vulcan-feu-french-avenue.webp'
     },
     {
       id: '6',
-      name: 'Nerune Bleu',
-      inspiration: 'Bleu de Chanel (Chanel)',
-      gender: 'Masculino',
-      family: 'Cítrico',
-      notes: ['Toronja (Pomelo)', 'Limón', 'Menta', 'Pimienta Rosa', 'Jengibre', 'Incienso', 'Sándalo'],
-      price: 45000,
-      size: '60 ml',
+      name: 'Lattafa Yara',
+      inspiration: 'Feminidad elegante y floral',
+      gender: 'Mujer',
+      family: 'Floral',
+      notes: ['Jazmín', 'Rosa', 'Vainilla', 'Musk'],
+      price: 185000,
+      size: '100 ml',
       rating: 4.8,
       longevity: '8 - 10 horas',
-      description: 'Un perfume aromático y boscoso de elegancia atemporal. Destaca por su frescura cítrica inicial y un fondo cálido e hipnótico de incienso.',
-      gradient: 'linear-gradient(135deg, #0e7490 0%, #155e75 50%, #083344 100%)',
-      image: 'perfumes/bleu.png'
+      description: 'Una fragancia floral delicada y sofisticada, con un fondo cremoso que la vuelve muy atractiva.',
+      gradient: 'linear-gradient(135deg, #c084fc 0%, #9333ea 55%, #4c1d95 100%)',
+      image: 'perfumes/lattafa-yara-webp.webp'
+    },
+    {
+      id: '7',
+      name: 'Hawas Ice',
+      inspiration: 'Frialdad fresca y moderna',
+      gender: 'Hombre',
+      family: 'Cítrico',
+      notes: ['Pepino', 'Cítrico', 'Mentol', 'Madera'],
+      price: 230000,
+      size: '100 ml',
+      rating: 4.8,
+      longevity: '8 - 10 horas',
+      description: 'Un aroma fresco y muy contemporáneo que transmite limpieza, energía y una sensación de modernidad.',
+      gradient: 'linear-gradient(135deg, #38bdf8 0%, #0f766e 55%, #0f172a 100%)',
+      image: 'perfumes/hawas-ice.webp'
+    },
+    {
+      id: '8',
+      name: 'Claude de Ariana Grande',
+      inspiration: 'Fragancia dulce y seductora con un toque gourmand',
+      gender: 'Mujer',
+      family: 'Dulce',
+      notes: ['Frambuesa', 'Azúcar', 'Vainilla', 'Miel'],
+      price: 280000,
+      size: '100 ml',
+      rating: 4.9,
+      longevity: '8 - 10 horas',
+      description: 'Un perfume femenino y encantador, con notas gourmand que envuelven en una dulzura moderna y sofisticada.',
+      gradient: 'linear-gradient(135deg, #f9a8d4 0%, #ec4899 55%, #9d174d 100%)',
+      image: 'perfumes/claude-ariana.webp'
     }
   ];
 

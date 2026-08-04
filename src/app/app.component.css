@@ -765,6 +765,14 @@ section {
   width: 100%;
 }
 
+.recommendation-info .label-badge {
+  position: static;
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
 .perfume-card {
   border-radius: 20px;
   overflow: hidden;
@@ -871,6 +879,43 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   z-index: 4;
+}
+
+.label-badge {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 4;
+}
+
+.label-badge.label-original {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: rgba(34, 197, 94, 0.28);
+  color: #d1fae5;
+}
+
+.label-badge.label-oneone {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.28);
+  color: #bfdbfe;
+}
+
+.recommendation-info .label-badge {
+  position: static;
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 .card-body {

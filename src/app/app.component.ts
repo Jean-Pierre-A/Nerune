@@ -7,6 +7,7 @@ interface Perfume {
   inspiration: string;
   gender: 'Mujer' | 'Hombre' | 'Unisex';
   family: 'Floral' | 'Amaderado' | 'Cítrico' | 'Dulce' | 'Oriental';
+  label: 'Original' | '1.1';
   notes: string[];
   price: number;
   size: string;
@@ -33,6 +34,7 @@ export class AppComponent {
   // Catalog Filters
   selectedGenderFilter: string = 'Todos';
   selectedFamilyFilter: string = 'Todos';
+  selectedLabelFilter: 'Todos' | 'Original' | '1.1' = 'Todos';
 
   getNoteIcon(note: string): string {
     const normalized = note.toLowerCase();
@@ -72,6 +74,7 @@ export class AppComponent {
       inspiration: 'Fragancia fresca de estilo marinero',
       gender: 'Hombre',
       family: 'Cítrico',
+      label: 'Original',
       notes: ['Bergamota', 'Pimienta', 'Madera', 'Ámbar'],
       price: 130000,
       size: '100 ml',
@@ -87,6 +90,7 @@ export class AppComponent {
       inspiration: 'Aroma intenso y enérgico',
       gender: 'Hombre',
       family: 'Amaderado',
+      label: 'Original',
       notes: ['Pimienta', 'Cedro', 'Vetiver', 'Cítrico'],
       price: 170000,
       size: '100 ml',
@@ -102,6 +106,7 @@ export class AppComponent {
       inspiration: 'Fragancia dulce y seductora',
       gender: 'Mujer',
       family: 'Dulce',
+      label: 'Original',
       notes: ['Vainilla', 'Jazmín', 'Caramelo', 'Café'],
       price: 195000,
       size: '100 ml',
@@ -117,6 +122,7 @@ export class AppComponent {
       inspiration: 'Aroma luminoso y efervescente',
       gender: 'Hombre',
       family: 'Cítrico',
+      label: 'Original',
       notes: ['Mandarina', 'Naranja', 'Lima', 'Rosa'],
       price: 160000,
       size: '100 ml',
@@ -132,6 +138,7 @@ export class AppComponent {
       inspiration: 'Intensidad y calidez oriental',
       gender: 'Mujer',
       family: 'Oriental',
+      label: 'Original',
       notes: ['Canela', 'Incienso', 'Ámbar', 'Madera'],
       price: 220000,
       size: '100 ml',
@@ -147,6 +154,7 @@ export class AppComponent {
       inspiration: 'Feminidad elegante y floral',
       gender: 'Mujer',
       family: 'Floral',
+      label: 'Original',
       notes: ['Jazmín', 'Rosa', 'Vainilla', 'Musk'],
       price: 185000,
       size: '100 ml',
@@ -162,6 +170,7 @@ export class AppComponent {
       inspiration: 'Frialdad fresca y moderna',
       gender: 'Hombre',
       family: 'Cítrico',
+      label: 'Original',
       notes: ['Pepino', 'Cítrico', 'Mentol', 'Madera'],
       price: 230000,
       size: '100 ml',
@@ -177,6 +186,7 @@ export class AppComponent {
       inspiration: 'Fragancia dulce y seductora con un toque gourmand',
       gender: 'Mujer',
       family: 'Dulce',
+      label: 'Original',
       notes: ['Frambuesa', 'Azúcar', 'Vainilla', 'Miel'],
       price: 280000,
       size: '100 ml',
@@ -202,7 +212,8 @@ export class AppComponent {
     return this.perfumes.filter(perfume => {
       const matchGender = this.selectedGenderFilter === 'Todos' || perfume.gender === this.selectedGenderFilter;
       const matchFamily = this.selectedFamilyFilter === 'Todos' || perfume.family === this.selectedFamilyFilter;
-      return matchGender && matchFamily;
+      const matchLabel = this.selectedLabelFilter === 'Todos' || perfume.label === this.selectedLabelFilter;
+      return matchGender && matchFamily && matchLabel;
     });
   }
 
@@ -213,6 +224,10 @@ export class AppComponent {
 
   filterByFamily(family: string) {
     this.selectedFamilyFilter = family;
+  }
+
+  filterByLabel(label: 'Todos' | 'Original' | '1.1') {
+    this.selectedLabelFilter = label;
   }
 
   // Quiz actions

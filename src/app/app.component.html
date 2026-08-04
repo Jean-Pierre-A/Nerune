@@ -35,10 +35,10 @@
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
     <div class="hero-content">
-      <span class="hero-badge">Alta Perfumería de Inspiración</span>
-      <h1 class="text-gradient">El lujo de un aroma exclusivo, ahora a tu alcance</h1>
+      <span class="hero-badge">Perfumes Originales y 1.1</span>
+      <h1 class="text-gradient">La elegancia de un aroma selecto, disponible en diferentes versiones</h1>
       <p>
-        En <strong>Nerune</strong> reinterpretamos las fragancias más icónicas del mundo con una fijación excepcional y materias primas de la más alta calidad. Encuentra tu sello olfativo personal.
+        En <strong>Nerune</strong> vendemos tanto fragancias originales auténticas como réplicas 1.1 de alto nivel. Descubre un aroma con presencia, fijación superior y una experiencia olfativa diseñada para impactar.
       </p>
       
       <div class="hero-actions">
@@ -204,6 +204,7 @@
 
           <div class="recommendation-info">
             <span class="perfume-cat-tag">{{ recommendedPerfume.gender }} &bull; {{ recommendedPerfume.family }}</span>
+            <span class="label-badge">{{ recommendedPerfume.label === 'Original' ? 'Original' : 'Perfume 1.1' }}</span>
             <h3>{{ recommendedPerfume.name }}</h3>
             <span class="inspiration-subtitle">Inspiración: {{ recommendedPerfume.inspiration }}</span>
             
@@ -249,9 +250,9 @@
   <!-- Catalogue Section -->
   <section id="catalog" class="catalog-section">
     <div class="section-header">
-      <span class="section-subtitle">Nuestra Colección</span>
-      <h2>Perfumes de Alta Gama</h2>
-      <p>Selecciona la categoría que prefieras y encuentra equivalencias inspiradas en la perfumería internacional más prestigiosa.</p>
+      <span class="section-subtitle">Originales y 1.1</span>
+      <h2>Perfumes de Alta Gama para cada estilo</h2>
+      <p>Selecciona tu fragancia ideal con etiquetas claras: originales auténticos o perfumes 1.1 de inspiración premium. Así sabes exactamente qué tipo de aroma estás eligiendo.</p>
     </div>
 
     <!-- Filters Area -->
@@ -277,6 +278,15 @@
           <button [class.active]="selectedFamilyFilter === 'Oriental'" (click)="filterByFamily('Oriental')">Oriental</button>
         </div>
       </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Calidad:</span>
+        <div class="filter-buttons">
+          <button [class.active]="selectedLabelFilter === 'Todos'" (click)="filterByLabel('Todos')">Todos</button>
+          <button [class.active]="selectedLabelFilter === 'Original'" (click)="filterByLabel('Original')">Original</button>
+          <button [class.active]="selectedLabelFilter === '1.1'" (click)="filterByLabel('1.1')">Calidad 1.1</button>
+        </div>
+      </div>
     </div>
 
     <!-- Catalogue Grid -->
@@ -286,11 +296,11 @@
           <!-- Glass Card Visual Scent Representation -->
           <div class="card-visual">
             <div class="scent-preview" [style.background]="perfume.gradient"></div>
-            <img [src]="perfume.image" [alt]="perfume.name + ' - Original'" class="card-perfume-img" loading="lazy" />
+            <img [src]="perfume.image" [alt]="perfume.name + ' - ' + (perfume.label === 'Original' ? 'Original' : 'Perfume 1.1')" class="card-perfume-img" loading="lazy" />
             <div class="visual-glass-overlay"></div>
             <span class="gender-badge">{{ perfume.gender }}</span>
             <span class="rating-badge">⭐ {{ perfume.rating }}</span>
-            <span class="inspiration-tag-badge">Aroma Original</span>
+            <span class="label-badge" [class.label-original]="perfume.label === 'Original'" [class.label-oneone]="perfume.label === '1.1'">{{ perfume.label === 'Original' ? 'Original' : 'Perfume 1.1' }}</span>
           </div>
 
           <div class="card-body">
@@ -342,9 +352,9 @@
   <!-- Quality / Benefits Section -->
   <section id="benefits" class="benefits-section">
     <div class="section-header">
-      <span class="section-subtitle">Perfumes Originales</span>
-      <h2>Autenticidad y calidad garantizadas</h2>
-      <p>Todos nuestros perfumes son originales y cuidadosamente seleccionados para ofrecerte el aroma real de cada marca. Compramos directamente las fragancias auténticas, así que disfrutas un producto 100% genuino con garantía de calidad.</p>
+      <span class="section-subtitle">Originales y 1.1 disponibles</span>
+      <h2>Calidad y claridad en cada aroma</h2>
+      <p>Ofrecemos tanto perfumes originales auténticos como perfumes 1.1 de alto nivel. Cada producto está etiquetado claramente para que sepas si estás eligiendo una versión original o una réplica 1.1 premium.</p>
     </div>
 
     <div class="benefits-grid">

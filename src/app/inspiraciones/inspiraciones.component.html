@@ -1,0 +1,287 @@
+<!-- ── Animated Background ── -->
+<div class="insp-bg">
+  <div class="insp-blob blob-a"></div>
+  <div class="insp-blob blob-b"></div>
+  <div class="insp-blob blob-c"></div>
+</div>
+
+<!-- ── Header ── -->
+<header class="insp-header">
+  <div class="insp-header-inner">
+    <a routerLink="/" class="insp-back-btn" aria-label="Volver al inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+      </svg>
+      Volver
+    </a>
+    <div class="insp-header-brand">
+      <span class="insp-brand-name">NERUNE</span>
+      <span class="insp-brand-sub">Inspiraciones 30ML</span>
+    </div>
+    <button class="insp-wpp-header-btn" (click)="redirectToWhatsApp('unit')" aria-label="Contactar WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+        <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.475 1.332 4.988L2 22l5.188-1.362c1.47.8 3.123 1.222 4.814 1.222 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.844 14.188c-.2.563-1.013 1.056-1.569 1.125-.375.044-.863.075-2.5-.6-2.119-.875-3.481-3.031-3.588-3.175-.106-.144-.863-1.15-.863-2.194 0-1.044.544-1.556.738-1.769.194-.213.431-.269.575-.269.144 0 .288.006.413.013.131.006.306-.05.475.356.175.419.6 1.469.65 1.575.05.106.081.231.006.375-.075.144-.113.238-.225.369-.113.131-.238.294-.338.4-.106.113-.219.238-.094.456.125.219.556.919 1.194 1.488.825.731 1.519.956 1.731 1.063.213.106.338.088.463-.056.125-.144.544-.631.688-.85.144-.219.288-.181.488-.106.2.075 1.269.6 1.488.713.219.113.363.169.419.263.056.094.056.55-.144 1.112z"/>
+      </svg>
+      Pedir Ya
+    </button>
+  </div>
+</header>
+
+<main class="insp-main">
+
+        <div class="insp-showcase-shell">
+        <img src="/perfumes/image.png_2K_20261013223004.jpg" alt="Botellas de inspiraciones 30 ml" class="insp-showcase-img" />
+      </div>
+  <!-- ── Hero Section ── -->
+  <section class="insp-hero">
+    <div class="insp-hero-visual" aria-label="Botellas de inspiraciones 30 ml">
+
+    </div>
+
+    <div class="insp-hero-content">
+      <span class="insp-hero-badge">✨ Colección Exclusiva</span>
+      <h1 class="insp-hero-title">
+        Inspiraciones de Lujo<br>
+        <span class="insp-hero-accent">en 30 ML</span>
+      </h1>
+      <p class="insp-hero-desc">
+        Las fragancias más icónicas del mundo, capturadas en envases de 30 ml de alta calidad. Lleva tu aroma favorito a todas partes al mejor precio.
+      </p>
+      <div class="insp-hero-bottles">
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #7ec8e3, #0070a0);"></div>
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #a18cd1, #fbc2eb);"></div>
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #4ade80, #16a34a);"></div>
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #f97316, #7c2d12);"></div>
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #fbbf24, #78350f);"></div>
+        <div class="insp-bottle-preview" style="background: linear-gradient(160deg, #f43f5e, #831843);"></div>
+      </div>
+    </div>
+
+    <!-- ── Pricing Cards ── -->
+    <div class="insp-pricing-zone">
+      <div class="insp-price-card insp-price-unit glass-insp">
+        <div class="insp-price-icon">🧴</div>
+        <div class="insp-price-label">1 Inspiración</div>
+        <div class="insp-price-amount">$18.000</div>
+        <div class="insp-price-detail">30 ML · Envase Premium</div>
+        <button class="insp-btn insp-btn-primary" (click)="redirectToWhatsApp('unit')">
+          Pedir Ahora
+        </button>
+      </div>
+
+      <div class="insp-price-card insp-price-kit glass-insp insp-kit-featured">
+        <div class="insp-kit-badge">🔥 MEJOR VALOR</div>
+        <div class="insp-price-icon">🎁</div>
+        <div class="insp-price-label">Kit x2 Inspiraciones</div>
+        <div class="insp-price-amount">$34.000</div>
+        <div class="insp-price-old">Antes $36.000</div>
+        <div class="insp-price-detail">Elige 2 fragancias a tu gusto</div>
+        <button class="insp-btn insp-btn-kit" (click)="redirectToWhatsApp('kit')">
+          Quiero el Kit
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gender Filter ── -->
+  <section class="insp-filter-section">
+    <h2 class="insp-filter-title">Explora la Colección</h2>
+    <div class="insp-filter-tabs">
+      <button [class.active]="selectedGender === 'Todos'" (click)="setFilter('Todos')" id="filter-todos">
+        <span>🌟</span> Todos
+      </button>
+      <button [class.active]="selectedGender === 'Hombre'" (click)="setFilter('Hombre')" id="filter-hombre">
+        <span>💎</span> Hombre
+      </button>
+      <button [class.active]="selectedGender === 'Mujer'" (click)="setFilter('Mujer')" id="filter-mujer">
+        <span>🌸</span> Mujer
+      </button>
+      <button [class.active]="selectedGender === 'Unisex'" (click)="setFilter('Unisex')" id="filter-unisex">
+        <span>⚡</span> Unisex
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Perfume Cards Grid ── -->
+  <section class="insp-grid-section">
+    <div class="insp-grid">
+      @for (item of filteredInspiraciones; track item.id) {
+        <article class="insp-card glass-insp" [id]="'card-' + item.id">
+          <!-- Card Visual Header -->
+          <div class="insp-card-visual" [style.background]="item.gradient">
+            <div class="insp-card-bottle-wrapper">
+              <div class="insp-card-bottle-glow" [style.background]="item.color"></div>
+              <div class="insp-card-bottle">
+                <div class="insp-bottle-cap"></div>
+                <div class="insp-bottle-neck"></div>
+                <div class="insp-bottle-body" [style.background]="item.gradient">
+                  <div class="insp-bottle-liquid"></div>
+                  <div class="insp-bottle-shine"></div>
+                </div>
+                <div class="insp-bottle-base"></div>
+              </div>
+            </div>
+            <div class="insp-card-badges">
+              <span class="insp-gender-badge insp-gender-{{ item.gender.toLowerCase() }}">{{ item.gender }}</span>
+              <span class="insp-family-badge">{{ item.family }}</span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="insp-card-body">
+            <div class="insp-card-brand">{{ item.brand }}</div>
+            <h3 class="insp-card-name">{{ item.name }}</h3>
+            <p class="insp-card-desc">{{ item.description }}</p>
+
+            <!-- Fragrance Pyramid Notes -->
+            <div class="insp-notes-section">
+              <div class="insp-notes-title">Pirámide Olfativa</div>
+
+              <div class="insp-pyramid">
+                <!-- Top Notes -->
+                <div class="insp-pyramid-level insp-level-top">
+                  <span class="insp-level-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                    Salida
+                  </span>
+                  <div class="insp-notes-row">
+                    @for (note of item.notes | noteFilter:'top'; track note.name) {
+                      <span class="insp-note-pill insp-note-top">
+                        <span class="insp-note-icon">{{ note.icon }}</span>
+                        {{ note.name }}
+                      </span>
+                    }
+                  </div>
+                </div>
+
+                <!-- Heart Notes -->
+                <div class="insp-pyramid-level insp-level-heart">
+                  <span class="insp-level-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    Corazón
+                  </span>
+                  <div class="insp-notes-row">
+                    @for (note of item.notes | noteFilter:'heart'; track note.name) {
+                      <span class="insp-note-pill insp-note-heart">
+                        <span class="insp-note-icon">{{ note.icon }}</span>
+                        {{ note.name }}
+                      </span>
+                    }
+                  </div>
+                </div>
+
+                <!-- Base Notes -->
+                <div class="insp-pyramid-level insp-level-base">
+                  <span class="insp-level-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    Fondo
+                  </span>
+                  <div class="insp-notes-row">
+                    @for (note of item.notes | noteFilter:'base'; track note.name) {
+                      <span class="insp-note-pill insp-note-base">
+                        <span class="insp-note-icon">{{ note.icon }}</span>
+                        {{ note.name }}
+                      </span>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="insp-card-footer">
+              <div class="insp-card-meta">
+                <span class="insp-meta-item">⏱ {{ item.longevity }}</span>
+                <span class="insp-meta-item">📦 30 ML</span>
+              </div>
+              <div class="insp-card-price-row">
+                <span class="insp-card-price">$18.000</span>
+                <button class="insp-btn insp-btn-card" (click)="redirectToWhatsApp('item', item)" [id]="'buy-' + item.id">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.475 1.332 4.988L2 22l5.188-1.362c1.47.8 3.123 1.222 4.814 1.222 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.844 14.188c-.2.563-1.013 1.056-1.569 1.125-.375.044-.863.075-2.5-.6-2.119-.875-3.481-3.031-3.588-3.175-.106-.144-.863-1.15-.863-2.194 0-1.044.544-1.556.738-1.769.194-.213.431-.269.575-.269.144 0 .288.006.413.013.131.006.306-.05.475.356.175.419.6 1.469.65 1.575.05.106.081.231.006.375-.075.144-.113.238-.225.369-.113.131-.238.294-.338.4-.106.113-.219.238-.094.456.125.219.556.919 1.194 1.488.825.731 1.519.956 1.731 1.063.213.106.338.088.463-.056.125-.144.544-.631.688-.85.144-.219.288-.181.488-.106.2.075 1.269.6 1.488.713.219.113.363.169.419.263.056.094.056.55-.144 1.112z"/>
+                  </svg>
+                  Pedir
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- ── Kit CTA Banner ── -->
+  <section class="insp-kit-banner">
+    <div class="insp-kit-banner-inner glass-insp">
+      <div class="insp-kit-banner-glow"></div>
+      <div class="insp-kit-banner-content">
+        <div class="insp-kit-banner-emoji">🎁</div>
+        <div>
+          <h2 class="insp-kit-banner-title">Kit x2 Inspiraciones</h2>
+          <p class="insp-kit-banner-desc">Elige 2 fragancias de toda la colección y ahorra. El regalo perfecto o tu combo del día a día.</p>
+        </div>
+        <div class="insp-kit-banner-price-area">
+          <div class="insp-kit-banner-price">$34.000</div>
+          <div class="insp-kit-banner-saving">Ahorras $2.000</div>
+          <button class="insp-btn insp-btn-kit" (click)="redirectToWhatsApp('kit')" id="btn-kit-banner">
+            Quiero el Kit
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Choose Section ── -->
+  <section class="insp-why-section">
+    <h2 class="insp-section-title">¿Por qué nuestras inspiraciones?</h2>
+    <div class="insp-why-grid">
+      <div class="insp-why-card glass-insp">
+        <div class="insp-why-icon">💧</div>
+        <h3>Aceites Importados</h3>
+        <p>Utilizamos aceites de fragancia de alta concentración importados para lograr la mayor fidelidad al aroma original.</p>
+      </div>
+      <div class="insp-why-card glass-insp">
+        <div class="insp-why-icon">🧴</div>
+        <h3>Envase Premium 30ML</h3>
+        <p>Envases de vidrio de alta calidad, compactos y perfectos para llevar en tu bolso o maleta a donde vayas.</p>
+      </div>
+      <div class="insp-why-card glass-insp">
+        <div class="insp-why-icon">⏱</div>
+        <h3>Larga Duración</h3>
+        <p>Nuestras fórmulas garantizan entre 6 y 12 horas de fijación real sobre la piel para que dures todo el día.</p>
+      </div>
+      <div class="insp-why-card glass-insp">
+        <div class="insp-why-icon">💸</div>
+        <h3>Precio Imbatible</h3>
+        <p>El lujo de las mejores marcas del mundo al alcance de todos. Sin comprometer ni un gramo de calidad.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ── Footer ── -->
+<footer class="insp-footer">
+  <div class="insp-footer-inner">
+    <div class="insp-footer-brand">
+      <span class="insp-footer-logo">NERUNE</span>
+      <p>Inspiraciones olfativas de lujo para todos.</p>
+    </div>
+    <div class="insp-footer-contact">
+      <p>📞 WhatsApp: +57 311 411 3938</p>
+      <p>📍 Envíos a todo Colombia</p>
+    </div>
+  </div>
+  <div class="insp-footer-bottom">
+    <p>© 2026 Nerune Perfumes · Inspiraciones 30ML</p>
+  </div>
+</footer>
+
+<!-- ── Floating WhatsApp ── -->
+<div class="insp-fab-wpp">
+  <button (click)="redirectToWhatsApp('unit')" aria-label="WhatsApp" id="fab-wpp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.46 3.475 1.332 4.988L2 22l5.188-1.362c1.47.8 3.123 1.222 4.814 1.222 5.506 0 9.988-4.482 9.988-9.988s-4.482-9.988-9.988-9.988zm4.844 14.188c-.2.563-1.013 1.056-1.569 1.125-.375.044-.863.075-2.5-.6-2.119-.875-3.481-3.031-3.588-3.175-.106-.144-.863-1.15-.863-2.194 0-1.044.544-1.556.738-1.769.194-.213.431-.269.575-.269.144 0 .288.006.413.013.131.006.306-.05.475.356.175.419.6 1.469.65 1.575.05.106.081.231.006.375-.075.144-.113.238-.225.369-.113.131-.238.294-.338.4-.106.113-.219.238-.094.456.125.219.556.919 1.194 1.488.825.731 1.519.956 1.731 1.063.213.106.338.088.463-.056.125-.144.544-.631.688-.85.144-.219.288-.181.488-.106.2.075 1.269.6 1.488.713.219.113.363.169.419.263.056.094.056.55-.144 1.112z"/>
+    </svg>
+  </button>
+  <span class="insp-fab-tooltip">¡Pedir por WhatsApp!</span>
+</div>

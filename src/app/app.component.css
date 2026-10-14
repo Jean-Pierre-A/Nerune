@@ -1,8 +1,8 @@
 /* Layout General */
 main {
-  max-width: 1200px;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
 }
 
 section {
@@ -1186,12 +1186,12 @@ section {
 /* Floating WhatsApp Widget */
 .wpp-floating-widget {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.25rem;
+  right: 0.5rem;
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
 }
 
 .wpp-floating-btn {
@@ -1222,13 +1222,7 @@ section {
 }
 
 .wpp-tooltip {
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: white;
-  pointer-events: none;
-  box-shadow: var(--shadow-glass);
+  display: none;
 }
 
 @keyframes pulse-wpp {
@@ -1341,4 +1335,349 @@ section {
   .wpp-tooltip {
     display: none; /* Hide tooltip on mobile to save space */
   }
+}
+
+/* ══════════════════════════════════════════════════
+   Nav link for Inspiraciones 30ML
+   ══════════════════════════════════════════════════ */
+.nav-link-insp {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2)) !important;
+  border: 1px solid rgba(168, 85, 247, 0.4) !important;
+  border-radius: 50px !important;
+  padding: 0.3rem 1rem !important;
+  color: #c084fc !important;
+  font-weight: 700 !important;
+  transition: all 0.25s !important;
+}
+
+.nav-link-insp:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.35), rgba(236, 72, 153, 0.35)) !important;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.3) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   Inspiraciones 30ML – Promo Section (Home)
+   ══════════════════════════════════════════════════ */
+.insp30-promo-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.insp30-promo-bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(168, 85, 247, 0.12) 0%, transparent 65%),
+              radial-gradient(ellipse at 20% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.insp30-promo-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 2vw, 3rem);
+  padding-right: 0;
+}
+
+/* Left content */
+.insp30-promo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.insp30-badge {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+
+.insp30-title {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--text-primary, #f0eeff);
+  margin: 0;
+}
+
+.insp30-title-accent {
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.insp30-desc {
+  color: var(--text-muted, rgba(255,255,255,0.5));
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.insp30-frags-preview {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.insp30-frag-chip {
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.insp30-hombre {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
+}
+
+.insp30-mujer {
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  color: #f9a8d4;
+}
+
+.insp30-unisex {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+}
+
+.insp30-pricing-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.insp30-price-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+}
+
+.insp30-kit-badge {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f97316;
+  letter-spacing: 0.05em;
+}
+
+.insp30-price-tag {
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.insp30-price-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.insp30-price-divider {
+  font-size: 2rem;
+  color: rgba(255,255,255,0.2);
+  align-self: center;
+}
+
+.insp30-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  width: fit-content;
+  box-shadow: 0 6px 25px rgba(168, 85, 247, 0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.insp30-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(168, 85, 247, 0.55);
+  color: #fff;
+}
+
+/* Right – Bottles display */
+.insp30-bottles-display {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(100%, 420px);
+  margin-left: auto;
+  justify-self: end;
+}
+
+.insp30-glow-orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  animation: orbPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes orbPulse {
+  0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.insp30-capacity-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(168,85,247,0.4);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.insp30-capacity-num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.insp30-capacity-unit {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Bottle group */
+.insp30-bottle-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.insp30-bottle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bottleHomeFloat 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.insp30-bottle-1 { animation-delay: 0s; }
+.insp30-bottle-2 { animation-delay: 0.4s; }
+.insp30-bottle-3 { animation-delay: 0.8s; }
+.insp30-bottle-4 { animation-delay: 1.2s; }
+.insp30-bottle-5 { animation-delay: 0.6s; }
+.insp30-bottle-6 { animation-delay: 1.0s; }
+
+@keyframes bottleHomeFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+.insp30-btl-cap {
+  width: 14px;
+  height: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 3px 3px 0 0;
+}
+
+.insp30-btl-neck {
+  width: 9px;
+  height: 16px;
+  background: rgba(255,255,255,0.2);
+}
+
+.insp30-btl-body {
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.insp30-bottle-1 .insp30-btl-body { width: 38px; height: 80px; }
+.insp30-bottle-2 .insp30-btl-body { width: 38px; height: 100px; }
+.insp30-bottle-3 .insp30-btl-body { width: 38px; height: 90px; }
+.insp30-bottle-4 .insp30-btl-body { width: 38px; height: 110px; }
+.insp30-bottle-5 .insp30-btl-body { width: 38px; height: 85px; }
+.insp30-bottle-6 .insp30-btl-body { width: 38px; height: 95px; }
+
+.insp30-btl-shine {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 6px;
+  height: 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5), transparent);
+  border-radius: 3px;
+}
+
+.insp30-btl-label {
+  margin-top: 6px;
+  font-size: 0.55rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-align: center;
+  max-width: 42px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive for promo section */
+@media (max-width: 900px) {
+  .insp30-promo-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .insp30-bottles-display {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .insp30-btl-body { height: 60px !important; width: 28px !important; }
+  .insp30-bottle-group { gap: 6px; }
+  .insp30-capacity-badge { display: none; }
+  .insp30-cta-btn { width: 100%; justify-content: center; }
 }

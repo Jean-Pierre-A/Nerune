@@ -1,8 +1,8 @@
 /* Layout General */
 main {
-  max-width: none;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 2rem;
 }
 
 section {
@@ -183,6 +183,9 @@ section {
   align-items: center;
   gap: 4rem;
   min-height: 80vh;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 2rem 0 1rem;
 }
 
 .hero-content {
